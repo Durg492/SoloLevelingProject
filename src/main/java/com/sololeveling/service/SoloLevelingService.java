@@ -9,6 +9,7 @@ import com.sololeveling.entity.SololevelingEntity;
 import com.sololeveling.repository.ImpSoloLevelingRepository;
 import com.sololeveling.request.SoloLevelingRequestLogin;
 import com.sololeveling.request.SoloLevelingRequestSign;
+import com.sololeveling.request.SoloLevelingRequestUpdate;
 import com.sololeveling.response.SololevelingResponse;
 @Service
 public class SoloLevelingService implements ImpService
@@ -73,6 +74,31 @@ public class SoloLevelingService implements ImpService
 		SololevelingEntity save=impSoloLevelingRepository.save(sololevelingEntity);
 		
 		return level;
+	}
+	@Override
+	public boolean updateName(SoloLevelingRequestUpdate s) 
+	{
+		
+		String name=s.getUpdateName();
+		String email=s.getUpdateEmail();
+		String phoneNumber=s.getUpdaePhonnumber();
+		if (name!=null)
+		{
+			impSoloLevelingRepository.updateHunterName(levelUpl, name);
+			return true;
+		}
+		if(email!=null)
+		{
+			impSoloLevelingRepository.updateEmail(levelUpl, email);
+			return true;
+		}
+		if(phoneNumber!=null)
+		{
+			impSoloLevelingRepository.updatePhoneNumber(levelUpl, phoneNumber);
+			return true;
+		}
+		
+		return true;
 	}
 	
 

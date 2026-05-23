@@ -5,10 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sololeveling.request.SoloLevelingRequestLogin;
 import com.sololeveling.request.SoloLevelingRequestSign;
+import com.sololeveling.request.SoloLevelingRequestUpdate;
 import com.sololeveling.response.SololevelingResponse;
 import com.sololeveling.service.ImpService;
 
@@ -130,6 +132,12 @@ public class SoloController
 	  System.out.println("enter to the Dasbord");
 	  return "Home";
   }
-  
+  @RequestMapping("update")
+  public String updateNEPh(@ModelAttribute SoloLevelingRequestUpdate soloLevelingRequestUpdate,Model model)
+  {
+	  boolean a=impService.updateName(soloLevelingRequestUpdate);
+	  return "Home";
+	  
+  }
   
 }

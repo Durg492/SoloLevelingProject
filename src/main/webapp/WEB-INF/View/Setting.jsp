@@ -184,15 +184,30 @@ input {
 
         <div class="title">SYSTEM SETTINGS</div>
 
-        <!-- PROFILE -->
-        <div class="section">
-            <div class="section-title">PROFILE</div>
-            <input type="text" placeholder="Update Username">
-            <input type="email" placeholder="Update Email">
-            <input type="number" placeholder="Update Phone">
-            <button class="btn">SAVE</button>
-        </div>
+     <form action="update" method="post">
 
+    <!-- PROFILE -->
+    <div class="section">
+        <div class="section-title">PROFILE</div>
+
+        <input type="text"
+               name="updateName"
+               placeholder="Update Username">
+
+        <input type="email"
+               name="updateEmail"
+               placeholder="Update Email">
+
+        <input type="number"
+               name="updaePhonnumber"
+               placeholder="Update Phone">
+
+        <button type="submit" class="btn">
+            SAVE
+        </button>
+    </div>
+
+</form>
         <!-- SECURITY -->
         <div class="section">
             <div class="section-title">SECURITY</div>
